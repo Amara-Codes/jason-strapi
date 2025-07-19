@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "completed",
+        "cancelled",
+        "refunded"
+      ]
+    },
+    "totalAmount": {
+      "type": "decimal"
+    },
+    "subtotalBeforeTaxes": {
+      "type": "decimal"
+    },
+    "taxAmount": {
+      "type": "decimal"
+    },
+    "discountAmount": {
+      "type": "decimal"
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "qr",
+        "card",
+        "transfer"
+      ]
+    },
+    "operatorName": {
+      "type": "string"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}
