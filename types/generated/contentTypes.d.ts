@@ -509,6 +509,7 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     materialDocId: Schema.Attribute.String;
     orderItemPrice: Schema.Attribute.Decimal;
+    orders: Schema.Attribute.Relation<'manyToMany', 'api::order.order'>;
     productDocId: Schema.Attribute.String;
     productPrice: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
@@ -541,6 +542,10 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     notes: Schema.Attribute.Text;
     operatorName: Schema.Attribute.String;
+    order_items: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::order-item.order-item'
+    >;
     orderStatus: Schema.Attribute.Enumeration<
       ['completed', 'cancelled', 'refunded']
     >;

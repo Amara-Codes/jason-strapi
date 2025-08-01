@@ -48,6 +48,12 @@
     },
     "notes": {
       "type": "text"
+    },
+    "order_items": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::order-item.order-item",
+      "inversedBy": "orders"
     }
   }
 }
